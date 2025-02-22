@@ -7,7 +7,7 @@ const MessageInput = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const fileInputRef = useRef(null);
-  const { sendMessage } = useChatStore();
+  const { sendMessage, isMessageSended } = useChatStore();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -95,7 +95,7 @@ const MessageInput = () => {
         <button
           type="submit"
           className="btn btn-md btn-primary btn-circle"
-          disabled={!text.trim() && !imagePreview}
+          disabled={!text.trim() && !imagePreview || isMessageSended}
         >
           <Send size={22} />
         </button>
