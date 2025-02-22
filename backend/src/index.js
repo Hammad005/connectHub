@@ -18,6 +18,7 @@ app.use(cookieParser());
 app.use(cors(
     {
         origin: process.env.FRONTEND_URL,
+        methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
         credentials: true
     }
 ));
@@ -34,3 +35,4 @@ if (process.env.NODE_ENV === "development") {
     })
 }
 connectDb();
+export default app;
