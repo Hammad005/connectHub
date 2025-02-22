@@ -9,8 +9,6 @@ const io = new Server(server, {
     cors: {
         origin: process.env.FRONTEND_URL,
     },
-    transports: ["websocket", "polling"], // Ensure polling is enabled
-    withCredentials: true
 });
 
 export const getReceiverSocketId = (userId) => {
