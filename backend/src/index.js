@@ -18,7 +18,6 @@ app.use(cookieParser());
 app.use(cors(
     {
         origin: process.env.FRONTEND_URL,
-         methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
         credentials: true
     }
 ));
@@ -27,12 +26,7 @@ app.use(cors(
 app.use("/api/auth", authRoutes)
 app.use("/api/message", messageRoutes)
 
-
-if (process.env.NODE_ENV === "development") {
-    server.listen(PORT, () => {
-        console.log("Server is running on port", PORT);
-        connectDb();
-    })
-}
-connectDb();
-export default  app;
+server.listen(PORT, () => {
+    console.log("Server is running on port", PORT);
+    connectDb();
+})
