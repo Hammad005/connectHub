@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: process.env.FRONTEND_URL,
-        methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
+        methods: ["GET", "POST"],
         credentials: true
     },
     transports: ["websocket", "polling"] // Ensure polling is enabled
