@@ -9,6 +9,7 @@ const io = new Server(server, {
     cors: {
         origin: process.env.FRONTEND_URL,
     },
+    
 });
 
 export const getReceiverSocketId = (userId) => {
